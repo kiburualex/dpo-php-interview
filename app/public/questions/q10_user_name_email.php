@@ -7,7 +7,7 @@
 
     function displayUserDetails() {
         try {
-        // JSONPlaceholder URL with user email and name
+            // JSONPlaceholder URL with user email and name
             $usersUrl = 'https://jsonplaceholder.typicode.com/users';
 
             // initialize cURL session
