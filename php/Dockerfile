@@ -25,3 +25,5 @@ COPY ./app .
 # Run composer dump-autoload --optimize
 RUN composer dump-autoload --optimize
 
+
+# TODO::Add cron script to the image for redis worker

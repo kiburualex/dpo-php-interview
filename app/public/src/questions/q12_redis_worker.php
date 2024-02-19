@@ -15,8 +15,7 @@ $redis = new Client([
     'host'   => 'redis-cache',
 ]);
 
-$taskJson = $redis->get('task_queue');
-
+echo 'Queue worker is listening for jobs...' . PHP_EOL;
 
 // Infinite loop to keep the worker running
 while (true) {
