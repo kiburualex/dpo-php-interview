@@ -8,7 +8,7 @@ This is a PHP Interview Code with task solutions that run on docker and interact
 `http://localhost`
 
 ### To confirm the question with answers
-Access the app/public/questions folder and you'll find php files with names starting with question numbers in the format of questionNumber_description.php e.g q2_oop.php
+Access the app/public/src/questions folder and you'll find php files with names starting with question numbers in the format of questionNumber_description.php e.g q2_oop.php
 
 Beginning of every question's file is a description of the original question.
 
@@ -26,8 +26,7 @@ Task to appear in queue in Redis Desktop Manager
 
 ![alt text](static/redis.png)
 
-Run the worker to consume the task
-To send the email request
+Run the worker to consume the email task
 
 `$ docker exec -it app sh`
 
