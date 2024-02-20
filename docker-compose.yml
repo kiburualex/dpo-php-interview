@@ -34,8 +34,19 @@ services:
     networks:
       - app-network
 
-
   # mssql
+  mssql_server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=fakePassw0rd 
+    ports:
+      - "1433:1433"
+    networks:
+      - app-network
+    volumes:
+      - ./app/migration/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 networks:
   app-network:

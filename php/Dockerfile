@@ -1,6 +1,20 @@
 FROM php:8.2-fpm-alpine3.18
 
-RUN docker-php-ext-install pdo pdo_mysql
+# Install required dependencies including autoconf
+RUN apk update && apk --no-cache add pcre-dev ${PHPIZE_DEPS} \ 
+    && apk add --update linux-headers \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && apk del pcre-dev ${PHPIZE_DEPS} \
+    && apk add --no-cache \
+    unixodbc \
+    unixodbc-dev \
+    autoconf \
+    g++ \
+    make \
+    && pecl install sqlsrv pdo_sqlsrv \
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv
+
 
 # Redis is installed, enable it
 #RUN pecl install redis && docker-php-ext-enable redis
@@ -26,4 +40,3 @@ COPY ./app .
 RUN composer dump-autoload --optimize
 
 
-# TODO::Add cron script to the image for redis worker

@@ -12,8 +12,10 @@
     "require": {
         "php": "^8.0",
         "ext-pdo": "*",
-        "ext-pdo_mysql": "*",
-        "predis/predis": "^2.0"
+        "ext-pdo_sqlsrv": "*",
+        "ext-sqlsrv": "*",
+        "predis/predis": "^2.0",
+        "league/oauth2-client": "^2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

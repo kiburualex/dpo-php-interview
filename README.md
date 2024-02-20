@@ -11,3 +11,26 @@ This is a PHP Interview Code with task solutions that run on docker and interact
 Access the app/public/questions folder and you'll find php files with names starting with question numbers in the format of questionNumber_description.php e.g q2_oop.php
 
 Beginning of every question's file is a description of the original question.
+
+### How run the files
+`http://localhost/src/questions/q2_oop.php`
+
+### How to run question 12 - queue and worker
+To send the email request
+
+`http://localhost/src/questions/q12_redis_client.php`
+
+![alt text](static/redis_producer.png)
+
+Task to appear in queue in Redis Desktop Manager
+
+![alt text](static/redis.png)
+
+Run the worker to consume the task
+To send the email request
+
+`$ docker exec -it app sh`
+
+`php /var/www/html/public/src/questions/q12_redis_worker.php`
+
+![alt text](static/redis_consumer.png)
