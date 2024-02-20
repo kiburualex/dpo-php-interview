@@ -12,7 +12,7 @@ Access the app/public/src/questions folder and you'll find php files with names 
 
 Beginning of every question's file is a description of the original question.
 
-### How run the files
+### How to run the files on the browser
 `http://localhost/src/questions/q2_oop.php`
 
 ### How to run question 12 - queue and worker
